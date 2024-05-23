@@ -42,8 +42,8 @@ struct ContentView: View {
   @State private var fetchObjectsTask: Task<Void, Error>?
 
   func fetchObjects(for queryTerm: String) async throws {
-    if let objectIDs = try await service.getObjectIDs(from: queryTerm) {  // 1
-      for (index, objectID) in objectIDs.objectIDs.enumerated()  // 2
+    if let objectIDs = try await service.getObjectIDs(from: queryTerm) {
+      for (index, objectID) in objectIDs.objectIDs.enumerated()
       where index < maxIndex {
         if let object = try await service.getObject(from: objectID) {
           await MainActor.run {
