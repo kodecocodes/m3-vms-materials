@@ -41,10 +41,13 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       VStack {
-        Text("You searched for '\(query)'")
+        Text("You searched for \(store.maxIndex) '\(query)' objects")
           .padding(5)
           .background(Color.metForeground)
           .cornerRadius(10)
+//        Button("Change maxIndex") {
+//          store.maxIndex = 2
+//        }
         List(store.objects, id: \.objectID) { object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
