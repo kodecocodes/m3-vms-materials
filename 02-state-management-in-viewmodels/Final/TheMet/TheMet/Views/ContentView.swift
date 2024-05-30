@@ -33,7 +33,8 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State var store = TheMetStore()
+//  @State var store = TheMetStore()
+  var store: TheMetStore
   @State private var query = "rhino"
   @State private var showQueryField = false
   @State private var fetchObjectsTask: Task<Void, Error>?
@@ -112,5 +113,5 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView()
+  ContentView(store: TheMetStore())
 }
