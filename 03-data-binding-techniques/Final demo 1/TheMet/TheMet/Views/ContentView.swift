@@ -33,7 +33,8 @@
 import SwiftUI
 
 struct ContentView: View {
-  var store: TheMetStore
+//  var store: TheMetStore
+  @Environment(TheMetStore.self) var store
   @State private var query = "rhino"
   @State private var showQueryField = false
   @State private var fetchObjectsTask: Task<Void, Error>?
@@ -92,9 +93,6 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea()
         }
-        .navigationDestination(for: Object.self) { object in
-          ObjectView(object: object)
-        }
       }
       .overlay {
         if store.objects.isEmpty { ProgressView() }
@@ -109,5 +107,7 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView(store: TheMetStore())
+//  ContentView(store: TheMetStore())
+  ContentView()
+    .environment(TheMetStore())
 }

@@ -38,9 +38,7 @@ struct TheMetApp: App {
 
   var body: some Scene {
     WindowGroup {
-//      ContentView(store: store)
-      ContentView()
-        .environment(store)
+      ContentView(store: store)
     }
   }
 }

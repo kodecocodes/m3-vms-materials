@@ -34,13 +34,13 @@ import SwiftUI
 
 @main
 struct TheMetApp: App {
-//  @State var store = TheMetStore()
+  @State var store = TheMetStore()
 
   var body: some Scene {
     WindowGroup {
 //      ContentView(store: store)
       ContentView()
-//        .environment(store)
+        .environment(store)
     }
   }
 }

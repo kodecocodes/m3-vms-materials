@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct ObjectView: View {
-  var object: Object
+  @Binding var object: Object
 
   var body: some View {
     VStack {
@@ -67,9 +67,11 @@ struct ObjectView: View {
         PlaceholderView(note: "Not in public domain. URL not valid.")
       }
 
+//      CountView()
       HStack {
         Button(action: {
           // TODO: Toggle isFavorite
+          object.isFavorite.toggle()
         }) {
           Image(systemName: object.isFavorite ? "star.fill" : "star")
         }
@@ -88,13 +90,13 @@ struct ObjectView: View {
 }
 
 #Preview {
-  ObjectView(
-    object:
-      Object(
-        objectID: 452174,
-        title: "Bahram Gur Slays the Rhino-Wolf",
-        creditLine: "Gift of Arthur A. Houghton Jr., 1970",
-        objectURL: "https://www.metmuseum.org/art/collection/search/452174",
-        isPublicDomain: true,
-        primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg"))
+  @State var object = Object(
+    objectID: 452174,
+    title: "Bahram Gur Slays the Rhino-Wolf",
+    creditLine: "Gift of Arthur A. Houghton Jr., 1970",
+    objectURL: "https://www.metmuseum.org/art/collection/search/452174",
+    isPublicDomain: true,
+    primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg")
+
+  return ObjectView(object: $object)
 }

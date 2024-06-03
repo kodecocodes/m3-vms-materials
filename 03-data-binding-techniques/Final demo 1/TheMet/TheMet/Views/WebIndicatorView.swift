@@ -32,15 +32,19 @@
 
 import SwiftUI
 
-@main
-struct TheMetApp: App {
-//  @State var store = TheMetStore()
+struct WebIndicatorView: View {
+  let title: String
 
-  var body: some Scene {
-    WindowGroup {
-//      ContentView(store: store)
-      ContentView()
-//        .environment(store)
+  var body: some View {
+    HStack {
+      Text(title)
+      Spacer()
+      Image(systemName: "rectangle.portrait.and.arrow.right.fill")
+        .font(.footnote)
     }
   }
+}
+
+#Preview {
+  WebIndicatorView(title: "rhino")
 }

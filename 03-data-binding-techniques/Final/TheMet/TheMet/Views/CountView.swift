@@ -32,15 +32,14 @@
 
 import SwiftUI
 
-@main
-struct TheMetApp: App {
-//  @State var store = TheMetStore()
-
-  var body: some Scene {
-    WindowGroup {
-//      ContentView(store: store)
-      ContentView()
-//        .environment(store)
-    }
+struct CountView: View {
+  @Environment(TheMetStore.self) var store
+  var body: some View {
+    Text("\(store.objects.count) objects in store")
   }
+}
+
+#Preview {
+  CountView()
+    .environment(TheMetStore())
 }

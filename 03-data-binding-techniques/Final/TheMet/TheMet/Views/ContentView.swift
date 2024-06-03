@@ -33,7 +33,9 @@
 import SwiftUI
 
 struct ContentView: View {
-  var store: TheMetStore
+  @State var store = TheMetStore()
+//  @Bindable var store: TheMetStore
+//  @Environment(TheMetStore.self) var store
   @State private var query = "rhino"
   @State private var showQueryField = false
   @State private var fetchObjectsTask: Task<Void, Error>?
@@ -41,11 +43,13 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       VStack {
+//        @Bindable var twoWayStore = store
         Text("You searched for \(store.maxIndex) '\(query)' objects")
           .padding(5)
           .background(Color.metForeground)
           .cornerRadius(10)
-        List(store.objects, id: \.objectID) { object in
+//        List($twoWayStore.objects, id: \.objectID) { $object in
+        List($store.objects, id: \.objectID) { $object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
             NavigationLink(value: url) {
@@ -54,8 +58,8 @@ struct ContentView: View {
             .listRowBackground(Color.metBackground)
             .foregroundColor(.white)
           } else {
-            NavigationLink(value: object) {
-              Text(object.title)
+            NavigationLink(object.title) {
+              ObjectView(object: $object)
             }
             .listRowBackground(Color.metForeground)
           }
@@ -92,9 +96,6 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea()
         }
-        .navigationDestination(for: Object.self) { object in
-          ObjectView(object: object)
-        }
       }
       .overlay {
         if store.objects.isEmpty { ProgressView() }
@@ -110,4 +111,6 @@ struct ContentView: View {
 
 #Preview {
   ContentView(store: TheMetStore())
+//  ContentView()
+//    .environment(TheMetStore())
 }
