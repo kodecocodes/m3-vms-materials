@@ -41,12 +41,11 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       VStack {
-//        @Bindable var store = self.store
-        Text("You searched for \(store.maxIndex) '\(query)' objects")
+        Text("You searched for '\(query)'")
           .padding(5)
           .background(Color.metForeground)
           .cornerRadius(10)
-        List($store.objects) { $object in
+        List(store.objects, id: \.objectID) { object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
             NavigationLink(value: url) {
@@ -56,7 +55,7 @@ struct ContentView: View {
             .foregroundColor(.white)
           } else {
             NavigationLink(object.title) {
-              ObjectView(object: $object)
+              ObjectView(object: object)
             }
             .listRowBackground(Color.metForeground)
           }

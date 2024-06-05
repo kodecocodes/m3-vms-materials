@@ -30,27 +30,71 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
+import SwiftUI
 
-@Observable class TheMetStore {
-  var objects: [Object] = []
-  private let service = TheMetService()
-  @ObservationIgnored var maxIndex: Int
+struct ObjectView: View {
+  @Bindable var object: Object
 
-  init(_ maxIndex: Int = 20) {
-    self.maxIndex = maxIndex
-  }
-
-  func fetchObjects(for queryTerm: String) async throws {
-    if let objectIDs = try await service.getObjectIDs(from: queryTerm) {
-      for (index, objectID) in objectIDs.objectIDs.enumerated()
-      where index < maxIndex {
-        if let object = try await service.getObject(from: objectID) {
-          await MainActor.run {
-            objects.append(object)
-          }
+  var body: some View {
+    VStack {
+      if let url = URL(string: object.objectURL) {
+        Link(destination: url) {
+          WebIndicatorView(title: object.title)
+            .multilineTextAlignment(.leading)
+            .font(.callout)
+            .frame(minHeight: 44)
+            .padding()
+            .background(Color.metBackground)
+            .foregroundColor(.white)
+            .cornerRadius(10)
         }
+      } else {
+        Text(object.title)
+          .multilineTextAlignment(.leading)
+          .font(.callout)
+          .frame(minHeight: 44)
       }
+
+      if object.isPublicDomain {
+        AsyncImage(url: URL(string: object.primaryImageSmall)) { image in
+          image
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+        } placeholder: {
+          PlaceholderView(note: "Display image here")
+        }
+      } else {
+        PlaceholderView(note: "Not in public domain. URL not valid.")
+      }
+
+      HStack {
+        Button(action: {
+          object.isFavorite.toggle()
+        }) {
+          Image(systemName: object.isFavorite ? "star.fill" : "star")
+        }
+        .padding()
+        Text(object.creditLine)
+          .font(.caption)
+          .padding()
+          .background(Color.metForeground)
+          .cornerRadius(10)
+        Spacer()
+      }
+      .padding()
     }
+    .padding(.vertical)
   }
+}
+
+#Preview {
+  let object = Object(
+    objectID: 452174,
+    title: "Bahram Gur Slays the Rhino-Wolf",
+    creditLine: "Gift of Arthur A. Houghton Jr., 1970",
+    objectURL: "https://www.metmuseum.org/art/collection/search/452174",
+    isPublicDomain: true,
+    primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg")
+
+  return ObjectView(object: object)
 }

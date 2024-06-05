@@ -107,5 +107,7 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView()
+  ContentView(store: MockMetStore())
+//  ContentView()
+//    .environment(MockMetStore())  // doesn't work
 }

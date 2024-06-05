@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco LLC
+/// Copyright (c) 2024 Kodeco LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,30 +32,41 @@
 
 import Foundation
 
-extension TheMetStore {
-  func createDevData() {
-    objects = [
-      Object(
-        objectID: 452174,
-        title: "Bahram Gur Slays the Rhino-Wolf",
-        creditLine: "Gift of Arthur A. Houghton Jr., 1970",
-        objectURL: "https://www.metmuseum.org/art/collection/search/452174",
-        isPublicDomain: false,
-        primaryImageSmall: ""),
-      Object(
-        objectID: 241715,
-        title: "Terracotta oil lamp",
-        creditLine: "The Cesnola Collection, Purchased by subscription, 1874–76",
-        objectURL: "https://www.metmuseum.org/art/collection/search/241715",
-        isPublicDomain: true,
-        primaryImageSmall: "https://images.metmuseum.org/CRDImages/gr/web-large/DP239561.jpg"),
-      Object(
-        objectID: 452648,
-        title: "Gushtasp Slays the Rhino-Wolf",
-        creditLine: "Bequest of Monroe C. Gutman, 1974",
-        objectURL: "https://www.metmuseum.org/art/collection/search/452648",
-        isPublicDomain: true,
-        primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/web-large/DP108572.jpg")
-    ]
+@Observable final class Object {
+  let objectID: Int
+  let title: String
+  let creditLine: String
+  let objectURL: String
+  let isPublicDomain: Bool
+  let primaryImageSmall: String
+  var isFavorite = false
+
+  init(objectID: Int, 
+       title: String,
+       creditLine: String,
+       objectURL: String,
+       isPublicDomain: Bool,
+       primaryImageSmall: String) {
+    self.objectID = objectID
+    self.title = title
+    self.creditLine = creditLine
+    self.objectURL = objectURL
+    self.isPublicDomain = isPublicDomain
+    self.primaryImageSmall = primaryImageSmall
   }
+}
+
+extension Object: Identifiable {
+  var id: Int { objectID }
+}
+
+extension Object: Codable {
+  enum CodingKeys: CodingKey {
+    case objectID, title, creditLine, objectURL, isPublicDomain, primaryImageSmall
+  }
+}
+
+struct ObjectIDs: Codable {
+  let total: Int
+  let objectIDs: [Int]
 }

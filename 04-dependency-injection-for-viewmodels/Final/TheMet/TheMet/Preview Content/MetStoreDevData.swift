@@ -47,7 +47,7 @@ extension TheMetStore {
         title: "Terracotta oil lamp",
         creditLine: "The Cesnola Collection, Purchased by subscription, 1874–76",
         objectURL: "https://www.metmuseum.org/art/collection/search/241715",
-        isPublicDomain: true,
+        isPublicDomain: false,
         primaryImageSmall: "https://images.metmuseum.org/CRDImages/gr/web-large/DP239561.jpg"),
       Object(
         objectID: 452648,
