@@ -33,8 +33,8 @@
 import SwiftUI
 
 struct ContentView: View {
-//  @State var store = TheMetStore()
-  @State var store = MockMetStore()
+  @State var store = TheMetStore()
+//  @Environment(TheMetStore.self) var store
   @State private var query = "rhino"
   @State private var showQueryField = false
   @State private var fetchObjectsTask: Task<Void, Error>?
@@ -42,6 +42,7 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       VStack {
+//        @Bindable var store = self.store
         Text("You searched for \(store.maxIndex) '\(query)' objects")
           .padding(5)
           .background(Color.metForeground)
@@ -107,6 +108,7 @@ struct ContentView: View {
 }
 
 #Preview {
-//  ContentView()
   ContentView(store: MockMetStore())
+//  ContentView()
+//    .environment(MockMetStore())  // doesn't work
 }
