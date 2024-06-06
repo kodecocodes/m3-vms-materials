@@ -15,8 +15,6 @@
 		CD1488F12961427B00332CAE /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1488F02961427B00332CAE /* URLComponentsExtension.swift */; };
 		CD1488F5296CD01F00332CAE /* TheMetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1488F4296CD01F00332CAE /* TheMetService.swift */; };
 		CD9B621B2C100810000D28BE /* MetStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B621A2C100810000D28BE /* MetStoreDevData.swift */; };
-		CD9B62232C10290D000D28BE /* TheMetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B62222C10290D000D28BE /* TheMetUITests.swift */; };
-		CD9B62252C10290D000D28BE /* TheMetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B62242C10290D000D28BE /* TheMetUITestsLaunchTests.swift */; };
 		CDC76C292BF241A900268C4F /* WebIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC76C282BF241A900268C4F /* WebIndicatorView.swift */; };
 		CDC76C2B2BF241EF00268C4F /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC76C2A2BF241EF00268C4F /* PlaceholderView.swift */; };
 		CDDCFFC12939C7930022CE9A /* TheMetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCFFC02939C7930022CE9A /* TheMetStore.swift */; };
@@ -48,8 +46,6 @@
 		CD1488F4296CD01F00332CAE /* TheMetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMetService.swift; sourceTree = "<group>"; };
 		CD9B621A2C100810000D28BE /* MetStoreDevData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetStoreDevData.swift; sourceTree = "<group>"; };
 		CD9B62202C10290D000D28BE /* TheMetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD9B62222C10290D000D28BE /* TheMetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMetUITests.swift; sourceTree = "<group>"; };
-		CD9B62242C10290D000D28BE /* TheMetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CDC76C282BF241A900268C4F /* WebIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIndicatorView.swift; sourceTree = "<group>"; };
 		CDC76C2A2BF241EF00268C4F /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		CDDCFFC02939C7930022CE9A /* TheMetStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMetStore.swift; sourceTree = "<group>"; };
@@ -81,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				18D775BF22AD944300AE281E /* TheMet */,
-				CD9B62212C10290D000D28BE /* TheMetUITests */,
 				18D775BE22AD944300AE281E /* Products */,
 			);
 			indentWidth = 2;
@@ -121,15 +116,6 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CD9B62212C10290D000D28BE /* TheMetUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD9B62222C10290D000D28BE /* TheMetUITests.swift */,
-				CD9B62242C10290D000D28BE /* TheMetUITestsLaunchTests.swift */,
-			);
-			path = TheMetUITests;
 			sourceTree = "<group>";
 		};
 		CDC76C242BF2402700268C4F /* Views */ = {
@@ -321,8 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9B62232C10290D000D28BE /* TheMetUITests.swift in Sources */,
-				CD9B62252C10290D000D28BE /* TheMetUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
