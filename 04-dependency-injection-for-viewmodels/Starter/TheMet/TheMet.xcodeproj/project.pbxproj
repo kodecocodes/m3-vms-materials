@@ -173,7 +173,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = Kodeco;
 				TargetAttributes = {
 					18D775BC22AD944300AE281E = {
