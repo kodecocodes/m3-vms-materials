@@ -98,4 +98,5 @@ struct ObjectView: View {
     primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg")
 
   return ObjectView(object: object)
+    .environment(TheMetStore())
 }
