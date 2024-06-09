@@ -92,9 +92,6 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea()
         }
-        .navigationDestination(for: Object.self) { object in
-          ObjectView(object: object)
-        }
       }
       .overlay {
         if store.objects.isEmpty { ProgressView() }
