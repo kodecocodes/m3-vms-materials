@@ -45,7 +45,7 @@ struct ContentView: View {
           .padding(5)
           .background(Color.metForeground)
           .cornerRadius(10)
-        List(store.objects, id: \.objectID) { object in
+        List(store.objects) { object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
             NavigationLink(value: url) {
