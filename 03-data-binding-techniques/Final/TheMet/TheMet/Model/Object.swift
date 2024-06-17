@@ -32,7 +32,7 @@
 
 import Foundation
 
-struct Object: Codable, Hashable {
+struct Object {
   let objectID: Int
   let title: String
   let creditLine: String
@@ -40,7 +40,13 @@ struct Object: Codable, Hashable {
   let isPublicDomain: Bool
   let primaryImageSmall: String
   var isFavorite = false
+}
 
+extension Object: Identifiable {
+  var id: Int { objectID }
+}
+
+extension Object: Codable {
   enum CodingKeys: CodingKey {
     case objectID, title, creditLine, objectURL, isPublicDomain, primaryImageSmall
   }

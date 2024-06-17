@@ -49,7 +49,7 @@ struct ContentView: View {
           .background(Color.metForeground)
           .cornerRadius(10)
 //        List($twoWayStore.objects, id: \.objectID) { $object in
-        List($store.objects, id: \.objectID) { $object in
+        List($store.objects) { $object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
             NavigationLink(value: url) {
