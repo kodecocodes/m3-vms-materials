@@ -78,13 +78,13 @@ struct ObjectView: View {
 }
 
 #Preview {
-  ObjectView(
-    object:
-      Object(
-        objectID: 452174,
-        title: "Bahram Gur Slays the Rhino-Wolf",
-        creditLine: "Gift of Arthur A. Houghton Jr., 1970",
-        objectURL: "https://www.metmuseum.org/art/collection/search/452174",
-        isPublicDomain: true,
-        primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg"))
+  @State var object = Object(
+    objectID: 452174,
+    title: "Bahram Gur Slays the Rhino-Wolf",
+    creditLine: "Gift of Arthur A. Houghton Jr., 1970",
+    objectURL: "https://www.metmuseum.org/art/collection/search/452174",
+    isPublicDomain: true,
+    primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg")
+
+  return ObjectView(object: object)
 }

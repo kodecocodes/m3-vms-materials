@@ -61,7 +61,7 @@ struct ContentView: View {
           .padding(5)
           .background(Color.metForeground)
           .cornerRadius(10)
-        List(objects, id: \.objectID) { object in
+        List(objects) { object in
           if !object.isPublicDomain,
             let url = URL(string: object.objectURL) {
             NavigationLink(value: url) {
@@ -70,8 +70,8 @@ struct ContentView: View {
             .listRowBackground(Color.metBackground)
             .foregroundColor(.white)
           } else {
-            NavigationLink(value: object) {
-              Text(object.title)
+            NavigationLink(object.title) {
+              ObjectView(object: object)
             }
             .listRowBackground(Color.metForeground)
           }
@@ -107,9 +107,6 @@ struct ContentView: View {
           SafariView(url: url)
             .navigationBarTitleDisplayMode(.inline)
             .ignoresSafeArea()
-        }
-        .navigationDestination(for: Object.self) { object in
-          ObjectView(object: object)
         }
       }
       .overlay {
