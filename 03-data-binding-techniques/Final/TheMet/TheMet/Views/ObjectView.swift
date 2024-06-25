@@ -67,7 +67,6 @@ struct ObjectView: View {
         PlaceholderView(note: "Not in public domain. URL not valid.")
       }
 
-//      CountView()
       HStack {
         Button(action: {
           // TODO: Toggle isFavorite
@@ -99,4 +98,5 @@ struct ObjectView: View {
     primaryImageSmall: "https://images.metmuseum.org/CRDImages/is/original/DP107178.jpg")
 
   return ObjectView(object: $object)
+    .environment(TheMetStore())
 }
