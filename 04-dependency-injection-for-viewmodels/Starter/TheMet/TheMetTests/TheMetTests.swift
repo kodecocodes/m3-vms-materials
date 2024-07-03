@@ -30,20 +30,24 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
-import SafariServices
+import XCTest
+@testable import TheMet
 
-struct SafariView: UIViewControllerRepresentable {
-  let url: URL
+final class TheMetTests: XCTestCase {
 
-  func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-    return SFSafariViewController(url: url)
+  override func setUpWithError() throws {
+    try super.setUpWithError()
   }
 
-  func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {}
-}
+  override func tearDownWithError() throws {
+    try super.tearDownWithError()
+  }
 
-#Preview {
-  // swiftlint:disable:next force_unwrapping
-  SafariView(url: URL(string: "https://www.metmuseum.org/art/collection/search/437092")!)
+  func testExample() throws {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Any test you write for XCTest can be annotated as throws and async.
+    // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+    // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+  }
 }

@@ -41,7 +41,6 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       VStack {
-//        @Bindable var store = self.store
         Text("You searched for \(store.maxIndex) '\(query)' objects")
           .padding(5)
           .background(Color.metForeground)

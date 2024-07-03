@@ -14,6 +14,7 @@
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
 		CD1488F12961427B00332CAE /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1488F02961427B00332CAE /* URLComponentsExtension.swift */; };
 		CD1488F5296CD01F00332CAE /* TheMetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1488F4296CD01F00332CAE /* TheMetService.swift */; };
+		CD29F4562C33AFDE0004AD49 /* TheMetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29F4552C33AFDE0004AD49 /* TheMetTests.swift */; };
 		CD8136F92C1070D60010C5FE /* MetStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8136F82C1070D60010C5FE /* MetStoreDevData.swift */; };
 		CDC76C292BF241A900268C4F /* WebIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC76C282BF241A900268C4F /* WebIndicatorView.swift */; };
 		CDC76C2B2BF241EF00268C4F /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC76C2A2BF241EF00268C4F /* PlaceholderView.swift */; };
@@ -23,6 +24,16 @@
 		CDDCFFC72939C83B0022CE9A /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCFFC62939C83B0022CE9A /* ObjectView.swift */; };
 		CDDCFFC92939C8500022CE9A /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCFFC82939C8500022CE9A /* SafariView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD29F4572C33AFDE0004AD49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D775B522AD944300AE281E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18D775BC22AD944300AE281E;
+			remoteInfo = TheMet;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1839F4AF25190F2A00BB00F1 /* TheMetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMetApp.swift; sourceTree = "<group>"; };
@@ -34,6 +45,8 @@
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD1488F02961427B00332CAE /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
 		CD1488F4296CD01F00332CAE /* TheMetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMetService.swift; sourceTree = "<group>"; };
+		CD29F4532C33AFDE0004AD49 /* TheMetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD29F4552C33AFDE0004AD49 /* TheMetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMetTests.swift; sourceTree = "<group>"; };
 		CD8136F82C1070D60010C5FE /* MetStoreDevData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetStoreDevData.swift; sourceTree = "<group>"; };
 		CDC76C282BF241A900268C4F /* WebIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIndicatorView.swift; sourceTree = "<group>"; };
 		CDC76C2A2BF241EF00268C4F /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
@@ -52,6 +65,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD29F4502C33AFDE0004AD49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				18D775BF22AD944300AE281E /* TheMet */,
+				CD29F4542C33AFDE0004AD49 /* TheMetTests */,
 				18D775BE22AD944300AE281E /* Products */,
 			);
 			indentWidth = 2;
@@ -69,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				18D775BD22AD944300AE281E /* TheMet.app */,
+				CD29F4532C33AFDE0004AD49 /* TheMetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +119,14 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD29F4542C33AFDE0004AD49 /* TheMetTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD29F4552C33AFDE0004AD49 /* TheMetTests.swift */,
+			);
+			path = TheMetTests;
 			sourceTree = "<group>";
 		};
 		CDC76C242BF2402700268C4F /* Views */ = {
@@ -165,6 +195,24 @@
 			productReference = 18D775BD22AD944300AE281E /* TheMet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CD29F4522C33AFDE0004AD49 /* TheMetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD29F45B2C33AFDF0004AD49 /* Build configuration list for PBXNativeTarget "TheMetTests" */;
+			buildPhases = (
+				CD29F44F2C33AFDE0004AD49 /* Sources */,
+				CD29F4502C33AFDE0004AD49 /* Frameworks */,
+				CD29F4512C33AFDE0004AD49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD29F4582C33AFDE0004AD49 /* PBXTargetDependency */,
+			);
+			name = TheMetTests;
+			productName = TheMetTests;
+			productReference = CD29F4532C33AFDE0004AD49 /* TheMetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,12 +220,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = Kodeco;
 				TargetAttributes = {
 					18D775BC22AD944300AE281E = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					CD29F4522C33AFDE0004AD49 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 18D775BC22AD944300AE281E;
 					};
 				};
 			};
@@ -195,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				18D775BC22AD944300AE281E /* TheMet */,
+				CD29F4522C33AFDE0004AD49 /* TheMetTests */,
 			);
 		};
 /* End PBXProject section */
@@ -207,6 +260,13 @@
 				18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */,
 				18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */,
 				18D775C722AD944400AE281E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD29F4512C33AFDE0004AD49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +314,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD29F44F2C33AFDE0004AD49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD29F4562C33AFDE0004AD49 /* TheMetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD29F4582C33AFDE0004AD49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18D775BC22AD944300AE281E /* TheMet */;
+			targetProxy = CD29F4572C33AFDE0004AD49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		18D775DA22AD963800AE281E /* LaunchScreen.storyboard */ = {
@@ -428,6 +504,51 @@
 			};
 			name = Release;
 		};
+		CD29F4592C33AFDF0004AD49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.TheMetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TheMet";
+			};
+			name = Debug;
+		};
+		CD29F45A2C33AFDF0004AD49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.TheMetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TheMet";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -445,6 +566,15 @@
 			buildConfigurations = (
 				18D775D222AD944400AE281E /* Debug */,
 				18D775D322AD944400AE281E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD29F45B2C33AFDF0004AD49 /* Build configuration list for PBXNativeTarget "TheMetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD29F4592C33AFDF0004AD49 /* Debug */,
+				CD29F45A2C33AFDF0004AD49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
